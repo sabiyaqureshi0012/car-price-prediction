@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Prediction</title>
+    <!-- <link rel="stylesheet" href="delt.css"> -->
+  </head>
+  <body>
+    <div id="full" class="loginBox">
+
+      <h2>Predictive Analysis</h2>
+
+      <form action="{{ url_for('predict')}}" method="post">
+        <p>Year</p>
+        <input id="first" type="number" name="Year" placeholder="Enter Year">
+
+        <p>What is the Showroom Price?(In lakhs)</p>
+        <input id="second" type="number" name="Present_Price" placeholder="Enter Price" required='required'>
+
+        <!-- <input type="submit" name="" value="sign in">
+        <a href="#">Forget Password</a> -->
+
+        <p>How Many Kilometers Drived?</p>
+        <input id="third" type='number' name="Kms_Driven" required="required" placeholder="Enter Kilometers">
+
+        <p>How much owners previously had the car(0 or 1 or 3) ?</p>
+        <input id="fourth" type="number" name="Owner" required="required">
+
+        <p>What Is the Fuel type?</p>
+        <select style="margin-left: 35%" name="Fuel_Type_Petrol" id="fuel" required="required"><br>
+                <option value="Petrol">Petrol</option>
+                <option value="Diesel">Diesel</option>
+                <option value="Diesel">CNG</option>
+        </select>
+<br>
+        <p>Are you A Dealer or Individual</p>
+        <select style="margin-left: 35%" name="Seller_Type_Individual" id="resea" required="required">
+                <option value="Dealer">Dealer</option>
+                <option value="Individual">Individual</option>
+        </select>
+
+        <p>Transmission type</p>
+        <select style="margin-left: 35%" name="Transmission_Mannual" id="research" required="required">
+                <option value="Mannual">Manual Car</option>
+                <option value="Automatic">Automatic Car</option>
+        </select>
+
+        <br><button align='center' id="sub" type="submit" style="margin-left: 25%">Calculate Selling Price</button>
+
+      </form>
+
+        <br><br><h3>{{ prediction_text }}<h3>
+
+    </div>
+
+  <style>
+
+  body{
+    margin: 0;
+    padding: 0;
+    background-image: url('https://images-na.ssl-images-amazon.com/images/I/71NXUodnkPL._SL1500_.jpg');
+    background-image: cover;
+    font-family: sans-serif;
+  }
+
+  .loginBox
+  {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    height: 650px;
+    padding: 60px 20px;
+    box-sizing: content-box;
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  h2{
+    margin: 0;
+    padding: 0 0 20px;
+    color: white;
+    text-align: center;
+  }
+
+  .loginBox p
+  {
+    padding: 0;
+    margin: 0;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+  }
+
+  .loginBox input
+  {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+
+  .loginBox input[type='number']
+  {
+    border: none;
+    border-bottom: 1px solid #999;
+    background: Transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+  }
+
+  .loginBox select{
+    border: none;
+    border-bottom: 1px solid #999;
+    background: Transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .loginBox input[type='submit']:hover
+  {
+    background: #efed40;
+    color: #262626;
+  }
+
+  ::placeholder
+  {
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  #sub {
+    color: black;
+    height: 30px;
+    justify-content: center;
+  }
+
+
+
+  </style>
+
+  </body>
+</html>
